@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import router from './router';
-import { connect } from 'react-redux';
+import router from './router'
+import {connect} from 'react-redux';
 
 
 class App extends Component {
@@ -56,7 +56,7 @@ class App extends Component {
     this.handleChangeCreditG = this.handleChangeCreditG.bind(this);
     this.handleChangeCreditF = this.handleChangeCreditF.bind(this);
     this.handleChangeCreditP = this.handleChangeCreditP.bind(this);
-    //eigth view
+    //eighth view
     this.handleChangeUpdateHistory = this.handleChangeUpdateHistory.bind(this);
     //ninth view
     this.handleChangeAddressOne = this.handleChangeAddressOne.bind(this);
@@ -145,15 +145,15 @@ class App extends Component {
     return (
       <div>
     
-        { router }
+        {router}
 
       </div>
     );
   }
 }
 
-const mapStateToProps = (state) => {
-  state;
+function mapStateToProps(state){
+return state;
 }
 
-export default connect (mapStateToProps)(App);
+export default connect(mapStateToProps)(App);

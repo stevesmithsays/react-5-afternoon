@@ -1,18 +1,17 @@
 import React,  { Component } from 'react';
 import {Link} from 'react-router-dom';
-import { connect } from 'react-redux';
-import { updateLoanType, updatePropertyType } from '../../ducks/reducer';
-
+import {connect} from 'react-redux';
+import {updateLoanType, updatePropertyType } from '../../ducks/reducer';
 
 class WizardOne extends Component {
     render(){
-        const { updateLoanType, updatePropertyType } = this.props;
+        const {updateLoanType, updatePropertyType } = this.props;
         return(
             <div className="parent-div">
                 <div className="vert-align">
                     <p>What type of loan will you be needing?</p> <br />
                 
-                    <select onChange={ (e) => updateLoanType (e.target.value) }>
+                    <select onChange={(e) => {updateLoanType(e.target.value)}}>
 
                         <option type="text" value="Home Purchase" >Home Purchase</option>
                         <option type="text" value="Refinance" >Refinance</option>
@@ -22,7 +21,7 @@ class WizardOne extends Component {
 
                     <p>What type of property are you purchasing?</p> <br />
 
-                    <select onChange={ (e) => updatePropertyType (e.target.value) }>
+                    <select onChange={(e) => {updatePropertyType(e.target.value)}}>
 
                         <option value="Single Family Home">Single Family Home</option>
                         <option value="Town Home">Townhome</option>
@@ -39,13 +38,13 @@ class WizardOne extends Component {
     }
 }
 
-function mapStateToProps ( state ){
+function MapStateToProps(state){
     const { loanType, propertyType } = state;
 
     return {
         loanType,
         propertyType
-    };
+    }; 
 }
-export default connect( mapStateToProps, { updateLoanType, updatePropertyType} ) ( WizardOne );
 
+export default connect(MapStateToProps, {updateLoanType, updatePropertyType})(WizardOne); 
